@@ -389,10 +389,61 @@
 
                 </script>
                 </section>
-
+                
                 <section data-id="1" data-markdown>
                 <script type="text/template">
                 ## formatos de serialización (III)
+
+                Turtle:
+                  - Prefijos:
+                  
+                        PREFIX pref: <http://mi.prefjo.com#>
+                  - URI: 
+                        <http://www.google.es>
+                        pref:Clase
+                  - Blank nodes: 
+                        _:blid
+                        [ foaf:name "Anon" ]
+
+                </script>
+                </section>
+                
+                <section data-id="1" data-markdown>
+                <script type="text/template">
+                ## formatos de serialización (IV)
+
+                Turtle:
+                  - Tripletas
+                    - Finalización: `.`
+                    - Repetir sujeto + predicado: `,`
+                    - Repetir sujeto: `;`
+                  - `a` es alias de `rdf:type`
+                  - Comentarios
+                        # Comentario
+
+                </script>
+                </section>
+                
+                <section data-id="1" data-markdown>
+                <script type="text/template">
+                ## formatos de serialización (V)
+
+                Turtle:
+                  - Literales
+                  
+                  
+                    "Una cadena de caracteres"
+                    3
+                    "3"^^xsd:int
+                    "2019-05-22"^^xsd:date
+                    "A character string"@en
+
+                </script>
+                </section>
+
+                <section data-id="1" data-markdown>
+                <script type="text/template">
+                ## formatos de serialización (VI)
 
                 blank node:
 
@@ -405,7 +456,7 @@
                 </section>
                 <section data-id="1" data-markdown>
                 <script type="text/template">
-                ## formatos de serialización (IV)
+                ## formatos de serialización (VII)
 
                 JSON-LD:
 
@@ -427,7 +478,7 @@
                 </section>
                 <section data-id="1" data-markdown>
                 <script type="text/template">
-                ## formatos de serialización (V)
+                ## formatos de serialización (VIII)
 
                 JSON-LD context:
 
@@ -462,7 +513,7 @@
 
                 <section data-id="1" data-markdown>
                 <script type="text/template">
-                ## formatos de serialización (VI)
+                ## formatos de serialización (IX)
 
                 RDF/XML:
 
