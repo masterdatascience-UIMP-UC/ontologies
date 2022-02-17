@@ -913,7 +913,7 @@ Instancias
 
                 - OWL ofrece anotaciones para enlazar modelos de datos
 
-                        owl:Import
+                        owl:imports
                         owl:versionInfo
                         owl:backwardsCompatibleWith
                         owl:deprecatedProperty
@@ -992,7 +992,7 @@ Instancias
                 - Objetos en el mundo
                 - Pertenecen a clases
                 - Se relacionan con otros objetos y con valores de datos a través de propiedades
-                - Ej: Miguel, AyuntamientoDeSantander, IFCA
+                - Ej: miguel, ayuntamientoDeSantander, ifca
                 </script>
                 </section>
 
@@ -1063,7 +1063,7 @@ Instancias
 
                 - El primer **recurso** se refiere exactamente al mismo que el segundo
 
-                        ex:Kal-El     owl:sameAs    ex:Superman
+                        ex:kalEl     owl:sameAs    ex:superman
                 
 
                 Enlaza a dos individuos 
@@ -1218,23 +1218,40 @@ Instancias
                 <section data-id="1" data-markdown>
                 <script type="text/template">
                 ##  OWL: restricciones (II)
-                `cardinality, min‑cardinality, max‑cardinality`
+                `cardinality, minCardinality, maxCardinality`
 
                 - La propiedad puede tener un determinado número de valores
 
                         ex:Bípedo owl:equivalentClass [
                            rdf:type owl:Restriction;
-                           owl:onProperty  ex:tienePiernas;
+                           owl:onProperty  ex:tienePierna;
                            owl:cardinality "2"^^xsd:int
                         ]
                 
 
-                *Todos aquellos individuos que tienen 2 piernas*
+                *Todos aquellos individuos que tienen 2 relaciones `ex:tienePierna`*
                 </script>
                 </section>
+                
                 <section data-id="1" data-markdown>
                 <script type="text/template">
                 ##  OWL: restricciones (III)
+                `cardinality, minCardinality, maxCardinality`
+
+                        ex:PadreNumeroso owl:equivalentClass [
+                           rdf:type owl:Restriction;
+                           owl:onProperty  ex:tieneHijo;
+                           owl:minCardinality "3"^^xsd:int
+                        ]
+                
+
+                *Todos aquellos individuos que tienen al menos 3 `tieneHijo`*
+                </script>
+                </section>
+                
+                <section data-id="1" data-markdown>
+                <script type="text/template">
+                ##  OWL: restricciones (IV)
                 `hasValue`
 
                 - Todos los objetos de la propiedad tienen el valor especificado
@@ -1251,7 +1268,7 @@ Instancias
                 </section>
                 <section data-id="1" data-markdown>
                 <script type="text/template">
-                ##  OWL: restricciones (IV)
+                ##  OWL: restricciones (V)
                 `someValuesFrom`
 
                 - Al menos un objeto de esa propiedad es miembro de la clase especificada
@@ -1268,7 +1285,7 @@ Instancias
                 </section>
                 <section data-id="1" data-markdown>
                 <script type="text/template">
-                ##  OWL: restricciones (V)
+                ##  OWL: restricciones (VI)
                 `allValuesFrom`
 
                 - Todos los objetos de esa propiedad son miembros de la clase especificada
