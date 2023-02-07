@@ -84,9 +84,9 @@
                         <section data-id="1" data-markdown>
                                 <script type="text/template">
                                                         ## La Web Semántica
-                                                                                
+
                                                         ![Portada de Scientific American 2001](./img/semantic_web.png)<!-- .element height="40%" width="40%" -->
-                                                                      
+
                                                         </script>
                         </section>
                         <section data-id="1" data-markdown>
@@ -96,26 +96,26 @@
 
                                 </script>
                         </section>
-               
+
                 <section data-id="1" data-markdown>
                         <script type="text/template">
                                 ### ¿en qué se basan?
 
-                                RDF + XML + ontologías 
+                                RDF + ontologías
 
-                                **sujeto - predicado - objeto** 
+                                **sujeto - predicado - objeto**
 
                                     <http://example.org/bob#me>
                                     <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
                                     <http://xmlns.com/foaf/0.1/Person> .
-                                
 
-                                ¡y SPARQL! 
+
+                                ¡y SPARQL!
                         </script>
                 </section>
                 <section data-id="1" data-markdown>
                         <script type="text/template">
-                                ### ¿cómo es una aplicación semántica?
+                                ### ¿Cómo es una aplicación semántica?
                                 ![Arquitectura aplicación semántica](./img/despliegue.png)
                         </script>
                 </section>
@@ -267,7 +267,7 @@
                 </section>
                 <section data-id="1" data-markdown>
                 <script type="text/template">
-                ## URI, URI, URL
+                ## URI, IRI, URL
                 - URI: identifica un recurso físico o abstracto<!-- .element: class="fragment" data-fragment-index="1" -->
                 - IRI: como la URI, pero incorpora UTF-8<!-- .element: class="fragment" data-fragment-index="2" -->
                 - URL: una URI que, además de identificar, proporciona una forma de localizar el recurso a través de su mecanismo de acceso primario<!-- .element: class="fragment" data-fragment-index="3" -->
@@ -303,11 +303,11 @@
 
                 </script>
                 </section>
-                
+
                 <section data-id="1" data-markdown>
                 <script type="text/template">
                 ## literales (II)
-                
+
                 ![](./img/xsd-type-hierarchy.gif)<!-- .element width="45%" -->
                 </script>
                 </section>
@@ -338,7 +338,10 @@
 
                 RDF permite agrupar declaraciones en varios grafos y asociarlos a un IRI determinado
 
-                        <http://example.org/bob#me> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> <http://example.org/bob>
+                    <http://example.org/bob#me>
+                      <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+                        <http://xmlns.com/foaf/0.1/Person>
+                          <http://example.org/bob>
 
                 **se denominan quads**
 
@@ -365,7 +368,7 @@
                 ## formatos de serialización (II)
 
                 Turtle:
-                
+
                     @base <http://example.org/> .
                     @prefix owl: <http://www.w3.org/2002/07/owl#> .
                     @prefix foaf: <http://xmlns.com/foaf/0.1/> .
@@ -384,30 +387,30 @@
                             foaf:name "Mary Jane Watson" .
                         ] ;
                         foaf:name "Spiderman", "Человек-паук"@ru .
-                    
+
                     _:pp owl:sameAs <#spiderman> .
 
                 </script>
                 </section>
-                
+
                 <section data-id="1" data-markdown>
                 <script type="text/template">
                 ## formatos de serialización (III)
 
                 Turtle:
                   - Prefijos:
-                  
+
                         PREFIX pref: <http://mi.prefjo.com#>
-                  - URI: 
+                  - URI:
                         <http://www.google.es>
                         pref:Clase
-                  - Blank nodes: 
+                  - Blank nodes:
                         _:blid
                         [ foaf:name "Anon" ]
 
                 </script>
                 </section>
-                
+
                 <section data-id="1" data-markdown>
                 <script type="text/template">
                 ## formatos de serialización (IV)
@@ -423,15 +426,15 @@
 
                 </script>
                 </section>
-                
+
                 <section data-id="1" data-markdown>
                 <script type="text/template">
                 ## formatos de serialización (V)
 
                 Turtle:
                   - Literales
-                  
-                  
+
+
                     "Una cadena de caracteres"
                     3
                     "3"^^xsd:int
@@ -471,7 +474,7 @@
                             "title": "Mona Lisa",
                             "subject_of": "http://data.europeana.eu/item/04802/243FA8618938F4117025F17A8B813C5F9AA4D619",
                             "creator": "http://dbpedia.org/resource/Leonardo_da_Vinci"
-                        } 
+                        }
                     }
 
                 </script>
@@ -742,9 +745,9 @@ Instancias
                         ex:miHondaCivic rdf:type ex:Vehiculo .
                         ex:miHondaCivic rdf:type ex:ArticuloEnVenta .
                         ex:miHomdaCivic rdf:type ex:BienAsegurado .
-                
+
                 - En Turtle/SPARQL se puede abreviar con `a`:
-                
+
                         ex:miHondaCivic a ex:Vehiculo .
 
                 </script>
@@ -758,8 +761,8 @@ Instancias
                     - `rdfs:Class`: Clase RDF
                     - `rdfs:Literal`: Clase de los literales
                     - `rdf:Property`: Clase de las propiedades
-                
-                
+
+
                       ex:ArticuloEnVenta rdf:type rdfs:Class .
                       ex:precio rdf:type rdf:Property .
 
@@ -776,9 +779,9 @@ Instancias
 
                         ex:precio rdfs:domain rdf:ArticuloEnVenta .
                         ex:precio rdfs:range xsd:integer .
-                        
+
                 ### ¡Inferencia!
-                
+
 
                 </script>
                 </section>
@@ -789,11 +792,11 @@ Instancias
 
                 `subClassOf`
 
-                - Las instancias de una subclase lo son de su clase padre
+                - Las instancias de una subclase lo son de su clase madre
                 - Las propiedades de una clase lo son de su clase hija (**herencia**)
 
                         ex:Coche rdfs:subClassOf ex:Vehiculo .
-                
+
 
 
                 </script>
@@ -808,7 +811,7 @@ Instancias
                 - Propiedades incluidas en otra propiedad más general
 
                         ex:tieneMadre rdfs:subPropertyOf rdf:tieneProgenitor
-                
+
 
 
                 </script>
@@ -826,15 +829,15 @@ Instancias
                 </script>
                 </section>
                 <section data-id="1" data-markdown>
-                       
+
                         <script type="text/template">
                                 ### ejercicio
                                 <!-- .slide: style="font-size:30px" -->
-                                Expresar el siguiente conocimiento en RDF y RDFS. Utilizar un espacio de nombres 'ex' para la ontología creada, y Turtle como formato de serialización. 
-                
+                                Expresar el siguiente conocimiento en RDF y RDFS. Utilizar un espacio de nombres 'ex' para la ontología creada, y Turtle como formato de serialización.
+
                                 - El Curry Tailandés es un plato tailandés basado en leche de coco.
                                 - El Curry Tailandés se prepara con cilantro.
-                                - Pedro es alérgico a las nueces. 
+                                - Pedro es alérgico a las nueces.
                                 - El plato favorito de Pedro es el Curry Tailandés.
                                 - Todos los alérgicos a las nueces son compadecibles.
                                 - Todos los platos tailandeses son comestibles.
@@ -917,7 +920,7 @@ Instancias
                         owl:versionInfo
                         owl:backwardsCompatibleWith
                         owl:deprecatedProperty
-                
+
 
                 </script>
                 </section>
@@ -1005,7 +1008,7 @@ Instancias
                 - Cualquier instancia de la primera **clase** lo es también de las especificadas en la lista
 
                         ex:Madre     owl:intersectionOf    (ex:Mujer, ex:Progenitor)
-                
+
                 </script>
                 </section>
 
@@ -1017,7 +1020,7 @@ Instancias
                 - Cualquier instancia de la primera **clase** lo es también de **al menos una** especificadas en la lista
 
                         ex:Progenitor     owl:unionOf    (:Madre, :Padre)
-                
+
                 </script>
                 </section>
                 <section data-id="1" data-markdown>
@@ -1028,7 +1031,7 @@ Instancias
                 - La primera **clase** es equivalente a todo lo que no esté en la segunda
 
                         ex:Contable     owl:complementOf    ex:Incontable
-                
+
                 </script>
                 </section>
                 <section data-id="1" data-markdown>
@@ -1039,7 +1042,7 @@ Instancias
                 - La primera **clase** y la segunda no tienen miembros en común
 
                         ex:Hombre     owl:disjointWith    ex:Mujer
-                
+
                 </script>
                 </section>
                 <section data-id="1" data-markdown>
@@ -1050,7 +1053,7 @@ Instancias
                 - La primera **clase** y la segunda contienen los mismos miembros
 
                         ex:HijoDePedro owl:equivalentClass (:tienePadre :Pedro)
-                
+
 
                 ¡No implica igualdad de clases! (no denotan los mismos conceptos)
                 </script>
@@ -1064,9 +1067,9 @@ Instancias
                 - El primer **recurso** se refiere exactamente al mismo que el segundo
 
                         ex:kalEl     owl:sameAs    ex:superman
-                
 
-                Enlaza a dos individuos 
+
+                Enlaza a dos individuos
                 </script>
                 </section>
                 <section data-id="1" data-markdown>
@@ -1077,7 +1080,7 @@ Instancias
                 - El primer **recurso** se refiere a uno distinto del segundo
 
                         ex:AnaPastorMinistra owl:differentFrom ex:AnaPastorPeriodista
-                
+
                 </script>
                 </section>
 
@@ -1095,9 +1098,9 @@ Instancias
                 <section data-id="1" data-markdown>
                 <script type="text/template">
                 ##  OWL: propiedades (II)
-                `ObjectProperty` 
+                `ObjectProperty`
 
-                - La propiedad enlaza a otro recurso 
+                - La propiedad enlaza a otro recurso
 
                         ex:tieneConyuge a owl:ObjectProperty
 
@@ -1107,12 +1110,12 @@ Instancias
                 <section data-id="1" data-markdown>
                 <script type="text/template">
                 ##  OWL: propiedades (III)
-                `TransitiveProperty` 
+                `TransitiveProperty`
 
-                - Si la propiedad enlaza A con B y B con C, también enlaza A con C 
+                - Si la propiedad enlaza A con B y B con C, también enlaza A con C
 
                         ex:tieneAncestro a owl:TransitiveProperty
-                
+
                 </script>
                 </section>
                 <section data-id="1" data-markdown>
@@ -1123,7 +1126,7 @@ Instancias
                 - Si la propiedad relaciona A con B, también B con A
 
                         ex:tieneConyuge a owl:SymmetricProperty
-                
+
                 </script>
                 </section>
                 <section data-id="1" data-markdown>
@@ -1134,7 +1137,7 @@ Instancias
                 - Si la propiedad relaciona A con B, nunca relaciona B con A
 
                         ex:tieneHijo a owl:AsymmetricProperty
-                
+
                 </script>
                 </section>
                 <section data-id="1" data-markdown>
@@ -1145,7 +1148,7 @@ Instancias
                 - La propiedad enlaza algo consigo mismo
 
                         ex:conoceA a owl:ReflexiveProperty
-                
+
                 </script>
                 </section>
                 <section data-id="1" data-markdown>
@@ -1156,7 +1159,7 @@ Instancias
                 - La propiedad nunca enlaza algo consigo mismo
 
                         ex:tieneConyuge a owl:IrreflexiveProperty
-                
+
                 </script>
                 </section>
                 <section data-id="1" data-markdown>
@@ -1167,7 +1170,7 @@ Instancias
                 - La propiedad solo enlaza como mucho con un recurso
 
                         ex:cumpleAños a owl:FunctionalProperty
-                
+
                 </script>
                 </section>
                 <section data-id="1" data-markdown>
@@ -1178,7 +1181,7 @@ Instancias
                 - El sujeto de esta propiedad se identifica unívocamente por el valor de la misma
 
                         ex:tieneDNI a owl:InverseFunctionalProperty
-                
+
                 </script>
                 </section>
 
@@ -1190,7 +1193,7 @@ Instancias
                 - Las dos propiedades son inversas la una de la otra
 
                        ex:tieneHijo    owl:inverseOf    ex:tieneProgenitor
-                
+
                 </script>
                 </section>
 
@@ -1202,7 +1205,7 @@ Instancias
                 - Las dos propiedades son exactamente las mismas, aunque tengan distinta intencionalidad
 
                         ex:fechaNacimiento owl:equivalentProperty ex:cumpleaños
-                
+
                 </script>
                 </section>
                 <section data-id="1" data-markdown style="font-size:30px;">
@@ -1227,12 +1230,12 @@ Instancias
                            owl:onProperty  ex:tienePierna;
                            owl:cardinality "2"^^xsd:int
                         ]
-                
+
 
                 *Todos aquellos individuos que tienen 2 relaciones `ex:tienePierna`*
                 </script>
                 </section>
-                
+
                 <section data-id="1" data-markdown>
                 <script type="text/template">
                 ##  OWL: restricciones (III)
@@ -1243,12 +1246,12 @@ Instancias
                            owl:onProperty  ex:tieneHijo;
                            owl:minCardinality "3"^^xsd:int
                         ]
-                
+
 
                 *Todos aquellos individuos que tienen al menos 3 `tieneHijo`*
                 </script>
                 </section>
-                
+
                 <section data-id="1" data-markdown>
                 <script type="text/template">
                 ##  OWL: restricciones (IV)
@@ -1261,7 +1264,7 @@ Instancias
                            owl:onProperty ex:tienePadre;
                            owl:hasValue ex:Pepe
                         ]
-                
+
 
                 *Todos aquellos individuos que tienen de padre a Pepe*
                 </script>
@@ -1278,7 +1281,7 @@ Instancias
                            owl:onProperty ex:tieneHijo;
                            owl:someValuesFrom ex:Person
                         ].
-                
+
 
                 *Cualquier instancia de la clase Progenitor tiene al menos un hijo, que es instancia de la clase Persona*
                 </script>
@@ -1295,7 +1298,7 @@ Instancias
                              owl:onProperty  ex:come;
                              owl:allValuesFrom  ex:Carne
                         ].
-                
+
 
                 *La clase Carnívoro equivale a la clase de todos los individuos que comen "carne".*
                 </script>
@@ -1360,7 +1363,7 @@ Instancias
                 vocabulario RDF para representar KOS (taxonomías, tesauros, esquemas de clasificación y listas de encabezados de materia).
 
                         @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-                
+
 
                 </script>
                 </section>
@@ -1397,7 +1400,7 @@ Instancias
                         ex:Animal
                           rdf:type          skos:Concept;
                           skos:prefLabel    "animal"@es.
-                
+
 
                 </script>
                 </section>
@@ -1412,14 +1415,14 @@ Instancias
                           rdf:type          skos:Concept;
                           skos:prefLabel    "animal"@es;
                           skos:altLabel     "criatura"@es.
-                
+
 
                 </script>
                 </section>
                 <section data-id="1" data-markdown>
                 <script type="text/template">
                 ## SKOS: etiquetas (IV)
-                
+
                 `skos:hiddenLabel`
                 - Permite asignar una etiqueta léxica oculta a un recurso.
                 - Se utiliza para alimentar motores de búsqueda o indexado de forma no visible.
@@ -1430,7 +1433,7 @@ Instancias
                           skos:prefLabel    "animal"@es;
                           skos:altLabel     "ganado"@es;
                           skos:hiddenLabel  "granado"@es;
-                
+
 
                 </script>
                 </section>
@@ -1467,9 +1470,9 @@ Instancias
                         ex:mamíferos rdf:type skos:Concept;
                           skos:prefLabel "mamíferos"@es;
                           skos:broader ex:animales.
-                 
 
-                 the subject of a skos:broader statement is the more specific concept involved in the assertion and its object is the more generic one.  
+
+                 the subject of a skos:broader statement is the more specific concept involved in the assertion and its object is the more generic one.
                 </script>
                 </section>
                 <section data-id="1" data-markdown>
@@ -1487,7 +1490,7 @@ Instancias
                         ex:pájaros rdf:type skos:Concept;
                           skos:prefLabel "pájaros"@es;
                           skos:related ex:ornitologia.
-                
+
                 </script>
                 </section>
                 <section data-id="1" data-markdown>
@@ -1514,7 +1517,7 @@ Instancias
                         ex:tesauroAnimal rdf:type skos:ConceptScheme;
                           skos:hasTopConcept ex:mamíferos;
                           skos:hasTopConcept ex:peces.
-                
+
                 </script>
                 </section>
                 <section data-id="1" data-markdown>
@@ -1528,7 +1531,7 @@ Instancias
                         dbpedia:Tennis rdf:type skos:ConceptScheme;
                           skos:prefLabel "tenis"@es;
                           skos:closeMatch ex2:Tenis.
-                
+
                 </script>
                 </section>
                 <section data-id="1" data-markdown>
@@ -1541,10 +1544,10 @@ Instancias
                 - Es un enlace más fuerte que `closeMatch`
 
                         ex1:animal skos:exactMatch ex2:animals.
-                
+
                 </script>
                 </section>
-                    
+
                 <section data-id="1" data-markdown>
                 <script type="text/template">
                 ## SKOS: reutilización
@@ -1557,14 +1560,14 @@ Instancias
                           ex1:cats rdf:type skos:Concept;
                           skos:prefLabel "cats"@en;
                           skos:inScheme ex1:referenceAnimalScheme.
-                
+
 
                 - La referencia a ex1:cats podría incluirse en otro esquema:
 
                         ex2:catScheme rdf:type skos:ConceptScheme;
                         dct:title "The Complete Cat Thesaurus"@en.
                         ex1:cats skos:inScheme ex2:catScheme.
-                
+
                 </script>
                 </section>
                 <section data-id="1" data-markdown>
@@ -1580,7 +1583,7 @@ Instancias
                           skos:member ex:Francia;
                           skos:member ex:España;
                           skos:member ex:Italia.
-                
+
 
                 </script>
                 </section>
@@ -1603,7 +1606,7 @@ Instancias
                            rdf:rest _:b3.
                         _:b3 rdf:first ex:adultos;
                            rdf:rest rdf:nil.
-                
+
 
 
                 </script>
@@ -1731,7 +1734,7 @@ Instancias
                         <script type="text/template">
                             ##  classes
                             - As mentioned previously, OWL classes are interpreted as sets of individuals (or sets of objects).
-                            - The class `Thing` is the class that represents the set containing all individuals. 
+                            - The class `Thing` is the class that represents the set containing all individuals.
                             - Because of this all classes are subclasses of `Thing`.
 
                             All classes in Protege should start with a capital letter and should not contain spaces.
@@ -1755,14 +1758,14 @@ Instancias
 
                     In OWL, subclass means **necessary implication**: all instances of the subclass are instances of the parent class too.
 
-        
+
 
                 </script>
             </section>
             <section data-id="1" data-markdown>
                 <script type="text/template">
                     ##  object properties
-                  
+
                     >Object properties are relationships between two individuals: they link an individual to an individual.
 
                     Recommendations: property names start with a lower case letter, have no spaces and have the remaining words capitalised. It is also recommended that they are prefixed withthe word ‘has’, or the word ‘is’.
@@ -1773,11 +1776,11 @@ Instancias
                 <script type="text/template">
                     ##  functional properties
                     - If a property is functional, for a given individual, there can be at most one individual that is related to the individual via the property.
-                    
+
                     - Functional properties are also known as single valued properties and also features.
 
                     - If a property is transitive then it cannot be functional.
-                  
+
                 </script>
             </section>
             <section data-id="1" data-markdown>
@@ -1801,8 +1804,8 @@ Instancias
             <section data-id="1" data-markdown>
                 <script type="text/template">
                    ##  existential restrictions
-                   >Existential restrictions describe classes of individuals that participate in at least one relationship along a specified property to individuals that are members of a specified class. 
-                   
+                   >Existential restrictions describe classes of individuals that participate in at least one relationship along a specified property to individuals that are members of a specified class.
+
                    For example, "the class of individuals that have at least one (**some**) `hasTopping` relationship to members of `MozzarellaTopping`".
                 </script>
             </section>
@@ -1811,7 +1814,7 @@ Instancias
                 <script type="text/template">
                    ##  universal restrictions
                    >Universal restrictions describe classes of individuals that for a given property only have relationships along this property to individuals that are members of a specified class.
-                   
+
                    For example, "the class of individuals that only have `hasTopping` relationships to members of `VegetableTopping`".
                 </script>
             </section>
@@ -1819,12 +1822,12 @@ Instancias
             <section data-id="1" data-markdown>
                 <script type="text/template">
                    ##  necessary and sufficient conditions
-                   >Necessary conditions can be read as: "If something is a member of this class then it is necessary to fulfil these conditions".  
-                   
+                   >Necessary conditions can be read as: "If something is a member of this class then it is necessary to fulfil these conditions".
+
                    With necessary conditions alone, we cannot say that: "If something fulfils these conditions then it must be a member of this class"
 
-                 
-                   
+
+
                 </script>
             </section>
             <section data-id="1" data-markdown>
@@ -1856,7 +1859,7 @@ Instancias
                 <script type="text/template">
                 ##  closure axioms
                 >A closure axiom on a property consists of a universal restriction that acts along the property to say that it can only be filled by the specified fillers. The restriction has a filler that is the union of the fillers that occur in the existential restrictions for the property.
-                
+
                 For example, the closure axiom on the `hasTopping` property for `MargheritaPizza` is a universal restriction that acts along the `hasTopping` property, with a filler that is the union  of `MozzarellaTopping` and also `TomatoTopping`.
 
                 </script>
@@ -1864,8 +1867,8 @@ Instancias
         <section data-id="1" data-markdown style="font-size:35px;">
                 <script type="text/template">
                 ##  covering axioms
-                >A covering axiom consists of two parts: the class that is being ‘covered’, and the classes that form the covering. 
-                
+                >A covering axiom consists of two parts: the class that is being ‘covered’, and the classes that form the covering.
+
                 For example, suppose we have three classes A, B and C. Classes B and C are subclasses of class A. Now suppose that we have a covering axiom that specifies class A is covered by class B and also class C. This means that a member of class A must be a member of B and/or C.
 
                 </script>
@@ -1874,7 +1877,7 @@ Instancias
                 <script type="text/template">
                 ##  covering axioms
                 >In Protege, a covering axiom manifests itself as a class that is the union of the classes being covered, which forms a superclass of the class being covered.
-                
+
                 `A SubclassOf (B or C)`
 
                 </script>
@@ -1884,13 +1887,13 @@ Instancias
                 ##  cardinality restrictions
                 > In OWL we can describe the class of individuals that have at least, at most or exactly a specified number of relationships with other individuals or datatype values. The restrictions that describe these classes are known as Cardinality Restrictions.
 
-                
+
                 </script>
         </section>
         <section data-id="1" data-markdown style="font-size:35px;">
                 <script type="text/template">
                 ##  cardinality restrictions
-        
+
                 - For a given property P, a Minimum Cardinality Restriction specifies the **minimum** number of P relationships that an individual must participate in.
                 - A Maximum Cardinality Restriction specifies the **maximum** number of P relationships that an individual can participate in.
                 - A Cardinality Restriction specifies the **exact** number of P relationships that an individual must participate in.
@@ -1899,13 +1902,13 @@ Instancias
         <section data-id="1" data-markdown style="font-size:35px;">
                 <script type="text/template">
                 ##  qualified cardinality restrictions
-        
+
                 >Qualified Cardinality Restrictions (QCR) are more specific than cardinality restrictions in that they state the class of objects within the restriction.
 
                 An unqualified cardinality restriction is exactly the same as a qualified cardinality restriction with a filler of Thing: `hasTopping min 3 Thing`
                 </script>
         </section>
-            
+
                     <section data-id="1" data-markdown>
                         <script type="text/template">
                             ##  exercise: pizza ontology
