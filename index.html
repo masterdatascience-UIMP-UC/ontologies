@@ -400,7 +400,7 @@
                 Turtle:
                   - Prefijos:
 
-                        PREFIX pref: <http://mi.prefjo.com#>
+                        @prefix pref: <http://mi.prefjo.com#> .
                   - URI:
                         <http://www.google.es>
                         pref:Clase
@@ -886,9 +886,9 @@ Instancias
 
                 - OWL 2 Full incluye RDFS y ofrece mucho más
 
-                        ex:Madre           owl:unionOf        (ex:Progenitor, ex:Mujer)
-                        ifca:johnSmith     owl:sameAs         personalDatabase:johnQSmith
-                        ex:MiPais          owl:allValuesFrom  (pais:españa, pais:italia, …)
+                        ex:Madre       owl:intersectionOf        (ex:Progenitor ex:Mujer)
+                        ifca:johnSmith owl:sameAs         personalDatabase:johnQSmith
+                        ex:Padre       owl:someValuesFrom  (ex:tieneHijo ex:Persona)
 
                 </script>
                 </section>
@@ -1055,7 +1055,7 @@ Instancias
                         ex:HijoDePedro owl:equivalentClass (:tienePadre :Pedro)
 
 
-                ¡No implica igualdad de clases! (no denotan los mismos conceptos)
+                ¡Las clases no son iguales!
                 </script>
                 </section>
 
@@ -1079,7 +1079,7 @@ Instancias
 
                 - El primer **recurso** se refiere a uno distinto del segundo
 
-                        ex:AnaPastorMinistra owl:differentFrom ex:AnaPastorPeriodista
+                        ex:anaPastorMinistra owl:differentFrom ex:anaPastorPeriodista
 
                 </script>
                 </section>
@@ -1300,7 +1300,7 @@ Instancias
                         ].
 
 
-                *La clase Carnívoro equivale a la clase de todos los individuos que comen "carne".*
+                *La clase Carnívoro equivale a la clase de todos los individuos que comen instancias de "Carne".*
                 </script>
                 </section>
 
