@@ -936,7 +936,7 @@ Instancias
 
                 <section data-id="1" data-markdown>
                 <script type="text/template">
-                ##  perfiles de OWL: OWL 2 / Full
+                ##  perfiles de OWL: OWL 2 Full
 
                 - El perfil más expresivo, permite usar todos los constructs disponibles
                 - Las reglas de inferencia pueden ser tan complejas que disparen el coste computacional (tiempo)
@@ -945,32 +945,16 @@ Instancias
                 </section>
                 <section data-id="1" data-markdown>
                 <script type="text/template">
-                ##  perfiles de OWL: OWL 2 / EL
+                ##  perfiles de OWL: Otros perfiles
 
-                - Útil si se tienen muchas clases y propiedades enlazadas a través de relaciones complejas y se desea que el razonador descubra nuevas relaciones
-                - Dichas relaciones entre clases pueden inferirse en tiempo polinomial
-
-                </script>
-                </section>
-                <section data-id="1" data-markdown>
-                <script type="text/template">
-                ##  perfiles de OWL: OWL 2 / QL
-
-                - Orientado hacia un procesamiento eficiente de muchos datos de tipo instancia (por ejemplo, provenientes de una BDR)
-                - Está lo suficientemente limitado para poder reescribir una consulta en SQL
+                - OWL 2 **DL**: Alta expresividad, decidibilidad
+                - OWL 2 **EL**: Útil para gran número de propiedades y clases, inferencia en tiempo polinomial
+                - OWL 2 **QL**: Útil cuando hay muchas instancias, tecnología relacional (SQL)
+                - OWL 2 **RL**: Orientado a ejecución en motor de reglas de negocio ("rule-based technologies")
 
                 </script>
                 </section>
 
-                <section data-id="1" data-markdown>
-                <script type="text/template">
-                ##  perfiles de OWL: OWL 2 / RL
-
-                - Orientado hacia la ejecución eficiente en un motor de reglas de negocio
-                - Funciona mejor con datos en RDF y reglas que podrían implementar cualquier lógica de negocio arbitraria
-
-                </script>
-                </section>
                 <section data-id="1" data-markdown>
                 <script type="text/template">
                 ##  OWL: clases
@@ -1007,7 +991,7 @@ Instancias
 
                 - Cualquier instancia de la primera **clase** lo es también de las especificadas en la lista
 
-                        ex:Madre     owl:intersectionOf    (ex:Mujer, ex:Progenitor)
+                        ex:Madre ≡ owl:intersectionOf (ex:Mujer, ex:Progenitor)
 
                 </script>
                 </section>
@@ -1019,7 +1003,7 @@ Instancias
 
                 - Cualquier instancia de la primera **clase** lo es también de **al menos una** especificadas en la lista
 
-                        ex:Progenitor     owl:unionOf    (:Madre, :Padre)
+                        ex:Progenitor ≡ owl:unionOf (:Madre, :Padre)
 
                 </script>
                 </section>
@@ -1030,7 +1014,7 @@ Instancias
 
                 - La primera **clase** es equivalente a todo lo que no esté en la segunda
 
-                        ex:Contable     owl:complementOf    ex:Incontable
+                        ex:Contable ≡ owl:complementOf ex:Incontable
 
                 </script>
                 </section>
@@ -1041,7 +1025,7 @@ Instancias
 
                 - La primera **clase** y la segunda no tienen miembros en común
 
-                        ex:Hombre     owl:disjointWith    ex:Mujer
+                        ex:Hombre owl:disjointWith ex:Mujer
 
                 </script>
                 </section>
@@ -1066,7 +1050,7 @@ Instancias
 
                 - El primer **recurso** se refiere exactamente al mismo que el segundo
 
-                        ex:kalEl     owl:sameAs    ex:superman
+                        ex:kalEl owl:sameAs ex:superman
 
 
                 Enlaza a dos individuos
