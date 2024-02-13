@@ -1805,7 +1805,7 @@ Instancias
 
             <section data-id="1" data-markdown>
                 <script type="text/template">
-                   ##  necessary and sufficient conditions
+                   ##  Necessary and sufficient conditions
                    >Necessary conditions can be read as: "If something is a member of this class then it is necessary to fulfil these conditions".
 
                    With necessary conditions alone, we cannot say that: "If something fulfils these conditions then it must be a member of this class"
@@ -1816,14 +1816,14 @@ Instancias
             </section>
             <section data-id="1" data-markdown>
                 <script type="text/template">
-                ##  necessary and sufficient conditions
+                ##  Necessary and sufficient conditions
                 - A class that only has necessary conditions is known as a **Primitive Class**.
                 - A class that has at least one set of necessary and sufficient conditions is known as a **Defined Class**.
                 </script>
         </section>
         <section data-id="1" data-markdown>
                 <script type="text/template">
-                ##  necessary and sufficient conditions
+                ##  Necessary and sufficient conditions
                 ><!--.element  style="font-size: 90%" -->In Protege, in order to convert necessary conditions to necessary and sufficient conditions, the conditions must be moved from under the `SubClass Of` header in the class description view to be under the `EquivalentClass` header.
 
                 Necessary conditions are simply called `SubClasses` in Protege. Necessary and sufficient conditions are called `Equivalent classes`.
@@ -1832,7 +1832,7 @@ Instancias
 
         <section data-id="1" data-markdown style="font-size:35px;">
                 <script type="text/template">
-                ##  necessary and sufficient conditions
+                ##  Necessary and sufficient conditions
                 - To summarise: If class A is described using necessary conditions, then we can say that if an individual is a member of class A, it must satisfy the conditions.
                 - We cannot say that any (random) individual that satisfies these conditions must be a member of class A.
                 - However, if class A is now defined using necessary and sufficient conditions, we can say that if an individual is a member of the class A, it must satisfy the conditions and we can now say that if any (random) individual satisfies these conditions, then it must be a member of class A.
@@ -1841,7 +1841,7 @@ Instancias
 
         <section data-id="1" data-markdown style="font-size:35px;">
                 <script type="text/template">
-                ##  closure axioms
+                ##  Closure axioms
                 >A closure axiom on a property consists of a universal restriction that acts along the property to say that it can only be filled by the specified fillers. The restriction has a filler that is the union of the fillers that occur in the existential restrictions for the property.
 
                 For example, the closure axiom on the `hasTopping` property for `MargheritaPizza` is a universal restriction that acts along the `hasTopping` property, with a filler that is the union  of `MozzarellaTopping` and also `TomatoTopping`.
@@ -1850,19 +1850,42 @@ Instancias
         </section>
         <section data-id="1" data-markdown style="font-size:35px;">
                 <script type="text/template">
-                ##  covering axioms
-                >A covering axiom consists of two parts: the class that is being ‘covered’, and the classes that form the covering.
+                ##  Closure axioms
 
-                For example, suppose we have three classes A, B and C. Classes B and C are subclasses of class A. Now suppose that we have a covering axiom that specifies class A is covered by class B and also class C. This means that a member of class A must be a member of B and/or C.
+                ```
+                PizzaMargherita EquivalentTo (
+                    hasTopping some MozzarellaTopping and
+                    hasTopping some TomatoTopping and
+                    hasTopping some (MozzarellaTopping or TomatoTopping) # !!
+                )
+                ```
+                </script>
+        </section>
+        <section data-id="1" data-markdown style="font-size:35px;">
+                <script type="text/template">
+                ##  Covering axioms
+                >A covering axiom consists of two parts: the class that is being ‘covered’, and the classes that
+                form the covering.
+
+                For example, suppose we have three classes A, B and C. Classes B and C are subclasses of class A.
+                Now suppose that we have a covering axiom that specifies class A is covered by class B and also class C.
+                This means that a member of class A must be a member of B and/or C.
 
                 </script>
         </section>
         <section data-id="1" data-markdown style="font-size:35px;">
                 <script type="text/template">
                 ##  covering axioms
-                >In Protege, a covering axiom manifests itself as a class that is the union of the classes being covered, which forms a superclass of the class being covered.
+                >In Protege, a covering axiom manifests itself as a class that is the union of the classes being covered,
+                which forms a superclass of the class being covered.
 
-                `A SubclassOf (B or C)`
+                ```
+                AnguloRecto SubClassOf Angulo
+                AnguloObtuso SubClassOf Angulo
+                AnguloAgudo SubClassOf Angulo
+                # Covering
+                Angulo SubClassOf (AnguloRecto or AnguloObtuso or AnguloAgudo)
+                ```
 
                 </script>
         </section>
