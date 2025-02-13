@@ -886,9 +886,10 @@ Instancias
 
                 - OWL 2 Full incluye RDFS y ofrece mucho más
 
-                        ex:Madre       owl:intersectionOf        (ex:Progenitor ex:Mujer)
-                        ifca:johnSmith owl:sameAs         personalDatabase:johnQSmith
-                        ex:Padre       owl:someValuesFrom  (ex:tieneHijo ex:Persona)
+                <pre style="min-width: 100%"><code>  ex:Madre ≡ owl:intersectionOf        (ex:Progenitor ex:Mujer)
+  ifca:johnSmith owl:sameAs         personalDatabase:johnQSmith
+  ex:Padre ≡ owl:someValuesFrom  (ex:tieneHijo ex:Persona)
+</code></pre>
 
                 </script>
                 </section>
@@ -991,7 +992,7 @@ Instancias
 
                 - Cualquier instancia de la primera **clase** lo es también de las especificadas en la lista
 
-                        ex:Madre ≡ owl:intersectionOf (ex:Mujer, ex:Progenitor)
+                <pre style="min-width: 100%"><code>ex:Madre ≡ owl:intersectionOf (ex:Mujer, ex:Progenitor)</code></pre>
 
                 </script>
                 </section>
@@ -1003,7 +1004,7 @@ Instancias
 
                 - Cualquier instancia de la primera **clase** lo es también de **al menos una** especificadas en la lista
 
-                        ex:Progenitor ≡ owl:unionOf (:Madre, :Padre)
+                <pre style="min-width: 100%"><code>ex:Progenitor ≡ owl:unionOf (:Madre, :Padre)</code></pre>
 
                 </script>
                 </section>
@@ -1063,7 +1064,7 @@ Instancias
 
                 - El primer **recurso** se refiere a uno distinto del segundo
 
-                        ex:anaPastorMinistra owl:differentFrom ex:anaPastorPeriodista
+                <pre style="min-width: 100%"><code>  ex:anaPastorMinistra owl:differentFrom ex:anaPastorPeriodista</code></pre>
 
                 </script>
                 </section>
@@ -1496,6 +1497,7 @@ Instancias
                 - Propiedad que permite enlazar un concept scheme con el resto de conceptos que contiene.
                 - Dominio: `skos:ConceptScheme`
                 - Rango: `skos:Concept`
+                - Inversa: `skos:topConceptOf`
                 - Punto de acceso a la jerarquía de conocimiento.
 
                         ex:tesauroAnimal rdf:type skos:ConceptScheme;
@@ -1558,7 +1560,7 @@ Instancias
                 <script type="text/template">
                 ## SKOS: colecciones
                 `skos:Collection`
-                - Permite agrupar conceptos en una colección
+                - Permite agrupar conceptos en una colección (mediante `skos:member`).
 
                         ex:Francia rdf:type skos:Concept.
                         ex:España rdf:type skos:Concept.
@@ -1567,30 +1569,6 @@ Instancias
                           skos:member ex:Francia;
                           skos:member ex:España;
                           skos:member ex:Italia.
-
-
-                </script>
-                </section>
-                <section data-id="1" data-markdown>
-                <script type="text/template">
-                ## SKOS: colecciones (II)
-                `skos:OrderedCollection`
-                - Capturan orden entre los elementos
-
-                        ex:niños rdf:type skos:Concept.
-                        ex:adolescentes rdf:type skos:Concept.
-                        ex:adultos rdf:type skos:Concept.
-
-                        _:b0 rdf:type skos:OrderedCollection;
-                           skos:prefLabel "personas por grupo de edad"@en;
-                           skos:memberList _:b1.
-                        _:b1 rdf:first ex:niños;
-                           rdf:rest _:b2.
-                        _:b2 rdf:first ex:adolescentes;
-                           rdf:rest _:b3.
-                        _:b3 rdf:first ex:adultos;
-                           rdf:rest rdf:nil.
-
 
 
                 </script>
