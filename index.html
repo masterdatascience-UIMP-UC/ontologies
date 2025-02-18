@@ -600,26 +600,6 @@
 
                         </script>
                     </section>
-                <section data-id="1" data-markdown>
-                <script type="text/template">
-                ## modelo informal
-                    <Person> <type> <Class>
-                    <is a friend of> <type> <Property>
-                    <is a friend of> <domain> <Person>
-                    <is a friend of> <range> <Person>
-                    <is a good friend of> <subPropertyOf> <is a friend of>
-
-                </script>
-                </section>
-
-                <section data-id="1" data-markdown>
-                <script type="text/template">
-                ## modelo real
-                ![Modelo real](./img/icane_model.png)<!-- .element: height="75%" width="75%"-->
-
-                </script>
-                </section>
-
                 </section>
 <section>
 <section data-id="1" data-markdown>
@@ -1015,7 +995,7 @@ Instancias
 
                 - La primera **clase** es equivalente a todo lo que no esté en la segunda
 
-                        ex:Contable ≡ owl:complementOf ex:Incontable
+                        ex:Contable owl:complementOf ex:Incontable
 
                 </script>
                 </section>
@@ -1574,6 +1554,16 @@ Instancias
                 </script>
                 </section>
 
+                <section data-markdown>
+                    <script type="text/template">
+                        ## Ejemplos reales
+
+                        - [Keywords for classifying OGC Interoperability Program documents](http://www.opengis.net/def/ip/keywords)
+                        - [OGC Register Item status values](http://www.opengis.net/def/status)
+                        - [Lista de Encabezamientos de Materia](http://id.sgcb.mcu.es/)
+                    </script>
+                </section>
+
                 </section>
                 <section>
                 <section data-id="1" data-markdown>
@@ -1669,18 +1659,6 @@ Instancias
 
                 </script>
                 </section>
-                    <section data-id="1" data-markdown>
-                        <script type="text/template">
-                            ##  ejemplo: vocabularios, skos
-
-                            - Acceder a [punto SPARQL](http://www.icane.es/semantic-web)
-                            - Lanzar consulta:
-                                    construct {?s ?p ?o} where {?s a skos:Concept; ?p ?o}
-                            - Acceder a [vocabulario](http://www.icane.es/opendata/vocab) e importar en Protégé
-                            - Parsear RDFa en visualizador
-
-                        </script>
-                    </section>
                 </section>
                 <section>
 
@@ -1910,9 +1888,6 @@ Instancias
                            - [RDF primer](https://www.w3.org/TR/rdf11-primer/)
                            - [OWL 2 primer](https://www.w3.org/TR/owl2-primer/)
                            - [SKOS primer](https://www.w3.org/TR/skos-primer/)
-                           - [Cambridge Semantics RDF](https://www.cambridgesemantics.com/blog/semantic-university/learn-rdf/)
-                           - [Cambridge Semantics OWL](https://www.cambridgesemantics.com/blog/semantic-university/learn-owl-rdfs/)
-                           - [Cambridge Semantics SPARQL](https://www.cambridgesemantics.com/blog/semantic-university/learn-sparql/)
 
                         </script>
                 </section>
